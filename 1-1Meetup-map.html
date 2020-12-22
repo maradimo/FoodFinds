@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FoodFind</title>
+	<link rel="stylesheet" type="text/css" href="list-style.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
+	<link rel="stylesheet" 
+          href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div id=screen class=container>
+		<!-- Part1: Headers -->
+		<div class="mytabs">
+			<!-- CODE HERE FOR LIST VIEW -->
+			<input type="radio" id="tablist" name="mytabs" checked="checked">
+			<label for="tablist" id="label1">List</label>
+			<div class="tab">
+				<span id="location" class><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+				<span>Columbia University</span>
+				<span id="change">CHANGE</span>
+				<!-- The Tabs -->
+				<div class="row">
+					<div class="column">
+						<figure>
+							<img src="pictures/MealSwipe.png">
+							<figcaption id="caption">MealSwipe</figcaption>
+						</figure>
+					</div>
+					<div class="column">
+						<figure id=selection>
+							<img src="pictures/Meetup.png">
+							<figcaption id="caption">1:1 Meetup</figcaption>
+						</figure>
+					</div>
+					<div class="column">
+						<a href="ClubEvent.html">
+							<figure>
+								<img src="pictures/ClubEvent.png">
+								<figcaption id="caption">ClubEvent</figcaption>
+							</figure>
+						</a>
+					</div>
+					<div class="column">
+						<figure>
+							<img src="pictures/Pantries.png">
+							<figcaption id="caption">Pantries</figcaption>
+						</figure>
+					</div>			
+				</div>
+				<div class="line"></div>
+
+				<!-- Card1 -->
+				<div class=post>
+					<div class=head>
+						<img src="pictures/profile5.png" alt="Avatar" class=img>
+						<span class=name>
+							<h4>John (CC'21)</h4>
+						</span>
+						<button class=button>Contact John</button>
+					</div>
+				
+					<div class = content>
+						<img src="pictures/MeetupFood1.jpg">
+						<p>Let me know if you want a bag of carrots!</p>
+					</div class= comment>
+						<span id=heart><i class="fa fa-heart" aria-hidden="true"></i></span>
+						<span id=comment><i class="fa fa-comment" aria-hidden="true"></i></span>
+						<span id=time>4:01PM</span>
+				</div>	
+
+				<!-- Card2 -->
+				<div class=post>
+					<div class=head>
+						<img src="pictures/profile4.png" alt="Avatar" class=img>
+						<span class=name>
+							<h4>Olivia (CC'22)</h4>
+						</span>
+						<button class=button>Contact Olivia</button>
+					</div>
+				
+					<div class = content>
+						<img src="pictures/MeetupFood2.jpg">
+						<p>Let me know if you want a bag of chips!</p>
+					</div class= comment>
+						<span id=heart><i class="fa fa-heart" aria-hidden="true"></i></span>
+						<span id=comment><i class="fa fa-comment" aria-hidden="true"></i></span>
+						<span id=time>4:17PM</span>					
+				</div>
+
+				<!-- Card3 -->
+				<div class=post>
+					<div class=head>
+						<img src="pictures/profile3.png" alt="Avatar" class=img>
+						<span class=name>
+							<h4>Sam (CC'22)</h4>
+						</span>
+						<button class=button>Contact Sam</button>
+					</div>
+				
+					<div class = content>
+						<img src="pictures/MeetupFood3.jpg">
+						<p>I have two extra sandwiches. Let me know if you want them!</p>
+					</div class= comment>
+						<span id=heart><i class="fa fa-heart" aria-hidden="true"></i></span>
+						<span id=comment><i class="fa fa-comment" aria-hidden="true"></i></span>
+						<span id=time>4:01PM</span>
+				</div>	
+			</div>
+
+			<!-- CODE HERE FOR MAP VIEW -->
+			<input type="radio" id="tabmap" name="mytabs">
+			<label for="tabmap">Map</label>
+			<div class="tab">
+				<span id="location" class><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+				<span>Columbia University</span>
+				<span id="change">CHANGE</span>
+				<!-- The Tabs -->
+				<div class="row">
+					<div class="column">
+						<figure>
+							<img src="pictures/MealSwipe.png">
+							<figcaption id="caption">MealSwipe</figcaption>
+						</figure>
+					</div>
+					<div class="column">
+						<figure id=selection>
+							<img src="pictures/Meetup.png">
+							<figcaption id="caption">1:1 Meetup</figcaption>
+						</figure>
+					</div>
+					<div class="column">
+						<a href="ClubEvent.html">
+							<figure>
+								<img src="pictures/ClubEvent.png">
+								<figcaption id="caption">ClubEvent</figcaption>
+							</figure>
+						</a>
+					</div>
+					<div class="column">
+						<figure>
+							<img src="pictures/Pantries.png">
+							<figcaption id="caption">Pantries</figcaption>
+						</figure>
+					</div>			
+				</div>
+				<div class="line"></div>	
+
+			<!-- CODE FOR MAP STARTS HERE -->
+			</div>
+		</div>
+	</div> 
+
+
+</body>
+</html>

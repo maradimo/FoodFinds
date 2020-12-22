@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>FoodFind</title>
+	<link rel="stylesheet" type="text/css" href="list-style.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6P2TU3mBROUqlPoI7iNcPUYtLup0g7QE&callback=initMap&libraries=&v=weekly"
+		defer></script>
+	<script>
+		// The following example creates complex markers to indicate beaches near
+		// Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
+		// to the base of the flagpole.
+		function initMap() {
+			const map = new google.maps.Map(document.getElementById("map"), {
+				zoom: 16,
+				center: { lat: 40.805667555647275, lng: -73.96538365741534 },
+				fullscreenControl: false,
+				zoomControl: false,
+				streetViewControl: false
+			});
+			setMarkers(map);
+		}
+		// Data for the markers consisting of a name, a LatLng and a zIndex for the
+		// order in which these markers should display on top of each other.
+		const beaches = [
+			["Cronulla Beach1", 40.806536495053564, -73.96663893113355, 4],
+			["Cronulla Beach", 40.80552958149482, -73.96617759099888, 3],
+			["Manly Beach", 40.80708879500131, -73.9642249429928, 2],
+			["Maroubra Beach", 40.80716188223557, -73.96512616514946, 1],
+		];
+
+		function setMarkers(map) {
+			for (let i = 0; i < beaches.length; i++) {
+				const beach = beaches[i];
+				new google.maps.Marker({
+					position: { lat: beach[1], lng: beach[2] },
+					map,
+					title: beach[0],
+					zIndex: beach[3],
+				});
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<div id=screen class=container>
+		<!-- Part1: Headers -->
+		<div class="mytabs">
+			<!-- CODE HERE FOR LIST VIEW -->
+			<input type="radio" id="tablist" name="mytabs" checked="checked">
+			<label for="tablist" id="label1">List</label>
+			<div class="tab">
+				<span id="location" class><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+				<span>Columbia University</span>
+				<span id="change">CHANGE</span>
+				<!-- The Tabs -->
+				<div class="row">
+					<div class="column">
+						<figure>
+							<img src="pictures/MealSwipe.png">
+							<figcaption id="caption">MealSwipe</figcaption>
+						</figure>
+					</div>
+					<div class="column">
+						<a href="1-1Meetup.html">
+							<figure>
+								<img src="pictures/Meetup.png">
+								<figcaption id="caption">1:1 Meetup</figcaption>
+							</figure>
+						</a>
+					</div>
+					<div class="column">
+						<figure id=selection>
+							<img src="pictures/ClubEvent.png">
+							<figcaption id="caption">ClubEvent</figcaption>
+						</figure>
+					</div>
+					<div class="column">
+						<figure>
+							<img src="pictures/Pantries.png">
+							<figcaption id="caption">Pantries</figcaption>
+						</figure>
+					</div>
+				</div>
+				<div class="filter-block">
+					<div class="filter">
+						Filter
+						<i class="fas fa-sliders-h"></i>
+					</div>
+					<div class="filter-pantry">
+						Pantry
+					</div>
+					<div class="filter-meal-swipe">
+						Meal Swipe
+					</div>
+					<div class="filter-pickup-only">
+						Pickup Only
+					</div>
+					<div class="filter-club-event">
+						Club Event
+					</div>
+				</div>
+				<div class="line"></div>
+				<div class="scroll">
+					<!-- Card1 -->
+					<div class=post>
+						<div class=head>
+							<img src="pictures/profile1.png" alt="Avatar" class=img>
+							<span class=name>
+								<h4>Tammy (CC'22)</h4>
+							</span>
+							<button class=button>Contact Tammy</button>
+						</div>
+
+						<div class=content>
+							<img src="pictures/ClubEventFood3.png">
+							<p>Mudd 301! Get it while it's hot!</p>
+						</div class=comment>
+						<span id=heart><i class="fa fa-heart" aria-hidden="true"></i></span>
+						<span id=comment><i class="fa fa-comment" aria-hidden="true"></i></span>
+						<span id=time>4:01PM</span>
+						<div>
+
+						</div>
+					</div>
+
+					<!-- Card2 -->
+					<div class=post>
+						<div class=head>
+							<img src="pictures/profile2.png" alt="Avatar" class=img>
+							<span class=name>
+								<h4>Olivia (CC'22)</h4>
+							</span>
+							<button class=button>Contact Olivia</button>
+						</div>
+
+						<div class=content>
+							<img src="pictures/ClubEventFood2.jpg">
+							<p>Mudd 322! Serving delicious food!</p>
+						</div class=comment>
+						<span id=heart><i class="fa fa-heart" aria-hidden="true"></i></span>
+						<span id=comment><i class="fa fa-comment" aria-hidden="true"></i></span>
+						<span id=time>4:17PM</span>
+						<div>
+
+						</div>
+					</div>
+
+					<!-- Card3 -->
+					<div class=post>
+						<div class=head>
+							<img src="pictures/profile3.png" alt="Avatar" class=img>
+							<span class=name>
+								<h4>Sam (CC'22)</h4>
+							</span>
+							<button class=button>Contact Sam</button>
+						</div>
+
+						<div class=content>
+							<img src="pictures/ClubEventFood1.jpg">
+							<p>Milstein 102! Get it while it's hot! Serving buffet right now!</p>
+						</div class=comment>
+						<span id=heart><i class="fa fa-heart" aria-hidden="true"></i></span>
+						<span id=comment><i class="fa fa-comment" aria-hidden="true"></i></span>
+						<span id=time>4:01PM</span>
+						<div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- CODE HERE FOR MAP VIEW -->
+			<input type="radio" id="tabmap" name="mytabs">
+			<label for="tabmap">Map</label>
+			<div class="tab">
+				<span id="location" class><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+				<span>Columbia University</span>
+				<span id="change">CHANGE</span>
+				<!-- The Tabs -->
+				<div class="row">
+					<div class="column">
+						<figure>
+							<img src="pictures/MealSwipe.png">
+							<figcaption id="caption">MealSwipe</figcaption>
+						</figure>
+					</div>
+					<div class="column">
+						<a href="1-1Meetup.html">
+							<figure>
+								<img src="pictures/Meetup.png">
+								<figcaption id="caption">1:1 Meetup</figcaption>
+							</figure>
+						</a>
+					</div>
+					<div class="column">
+						<figure id=selection>
+							<img src="pictures/ClubEvent.png">
+							<figcaption id="caption">ClubEvent</figcaption>
+						</figure>
+					</div>
+					<div class="column">
+						<figure>
+							<img src="pictures/Pantries.png">
+							<figcaption id="caption">Pantries</figcaption>
+						</figure>
+					</div>
+				</div>
+				<div class="line"></div>
+
+				<!-- CODE FOR MAP STARTS HERE -->
+				<div class="map">
+					<div id="map" style="width:100%;height:460px;">
+
+					</div>
+					<div class="fixed-bottom">
+						<div class="carousel-wrapper">
+							<div class="donor">
+								<img src="pictures/map-food1.png" />
+								<div class="donor-info">
+									<div>
+										<img src="pictures/contact-img.png" />
+										<div>
+											<div class="donor-name">
+												Sam (CC '22)
+											</div>
+											<div class="donor-contact">
+												Contact Sam
+											</div>
+										</div>
+									</div>
+									<div class="donor-time">
+										1hr
+									</div>
+								</div>
+							</div>
+							<div class="donor">
+								<img src="pictures/map-food2.png" />
+								<div class="donor-info">
+									<div>
+										<img src="pictures/contact-card2.jpeg" />
+										<div>
+											<div class="donor-name">
+												Jack (GS '21)
+											</div>
+											<div class="donor-contact">
+												Contact Jack
+											</div>
+										</div>
+									</div>
+									<div class="donor-time">
+										1hr
+									</div>
+								</div>
+							</div>
+							<div class="donor">
+								<img src="pictures/map-food1.png" />
+								<div class="donor-info">
+									<div>
+										<img src="pictures/contact-img.png" />
+										<div>
+											<div class="donor-name">
+												Rob (CC '20)
+											</div>
+											<div class="donor-contact">
+												Contact Rob
+											</div>
+										</div>
+									</div>
+									<div class="donor-time">
+										1hr
+									</div>
+								</div>
+							</div>
+							<div class="donor">
+								<img src="pictures/map-food2.png" />
+								<div class="donor-info">
+									<div>
+										<img src="pictures/contact-card2.jpeg" />
+										<div>
+											<div class="donor-name">
+												Joy (GS '24)
+											</div>
+											<div class="donor-contact">
+												Contact Joy
+											</div>
+										</div>
+									</div>
+									<div class="donor-time">
+										1hr
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>

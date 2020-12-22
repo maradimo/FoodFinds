@@ -1,0 +1,351 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: lightblue !important;
+  font-family: "Roboto", sans-serif;
+  overflow-y: scroll;
+}
+
+#screen {
+  height: 667px;
+  width: 375px;
+  background-color: white;
+  margin: auto;
+  margin-top: 5%;
+  border: 3px solid black;
+}
+
+/***********************************************************************/
+/*The following code is adapted from https://gist.github.com/brickbones/0b447985b10f143a160bcf2e1d69726a */
+
+.mytabs {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  padding: 25px 5px;
+}
+.mytabs input[type="radio"] {
+  display: none;
+}
+
+.mytabs #label1 {
+  margin-left: 65px;
+  margin-right: 10px;
+}
+.mytabs label {
+  padding: 10px 30px;
+  margin-left: 5px;
+  border: 2px black solid;
+
+  background: grey;
+  font-weight: bold;
+}
+.mytabs .tab {
+  width: 100%;
+  padding: 10px 0;
+  /*background: pink;*/
+  order: 1;
+  display: none;
+}
+.mytabs .tab h2 {
+  font-size: 3em;
+}
+.mytabs input[type="radio"]:checked + label + .tab {
+  display: block;
+}
+.mytabs input[type="radio"]:checked + label {
+  background: orange;
+}
+.scroll {
+  height: 439px;
+  overflow: hidden auto;
+}
+
+/*The adapted code ends here
+/***********************************************************************/
+#location {
+  color: orange;
+}
+
+#change {
+  color: orange;
+  float: right;
+  font-size: 15px;
+}
+
+#selection {
+  border-bottom: solid 4px orange;
+}
+.row {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px auto;
+}
+
+.column {
+  padding: 5px 10px 5px;
+}
+
+.column img {
+  width: 50px;
+  height: 50px;
+}
+
+#caption {
+  font-size: 10px;
+  /*flex:center;*/
+  text-align: left;
+  white-space: nowrap;
+}
+
+.post {
+  border: 1px solid grey;
+  box-shadow: 1px 3px 5px #888888;
+  padding-top: 10px;
+  border-radius: 5px;
+  margin: 10px 5px;
+}
+
+.post .img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /*float:left;*/
+}
+
+.name h4 {
+  /*float:center;*/
+  margin-left: 15px;
+  /*background-color: brown;*/
+  display: inline-block;
+  font-size: 12px;
+  /*margin-top: -50px;*/
+}
+
+button {
+  cursor: pointer;
+  box-shadow: 0 3px #999;
+  font-size: 10px;
+}
+
+.head {
+  padding: 0 10px;
+}
+
+.head .button {
+  background-color: orange;
+  border: none;
+  color: black;
+  text-align: center;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 5px;
+  float: right;
+  height: 25px;
+  min-width: 80px;
+  margin: 6px 5px 0 30px;
+  box-shadow: 1px 3px 5px #888888;
+}
+
+.content img {
+  width: 300px;
+  height: 175px;
+  border: black solid 2px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.content p {
+  padding-left: 5px;
+}
+
+#heart {
+  color: red;
+  padding: 5px;
+  font-size: 20px;
+}
+
+#comment {
+  /*border: black solid 2px;*/
+  font-size: 20px;
+}
+
+#time {
+  float: right;
+  margin-right: 5px;
+}
+
+.filter-block {
+  display: flex;
+}
+
+.filter-block div {
+  margin-right: 5px;
+  font-size: 9px;
+  text-align: center;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+.filter {
+  background-color: #dddedf;
+}
+
+.filter-pantry {
+  background-color: #b08bff;
+}
+
+.filter-meal-swipe {
+  background-color: #5fe37c;
+}
+
+.filter-pickup-only {
+  background-color: #ff7af2;
+}
+
+.filter-club-event {
+  background-color: #fcff73;
+}
+
+.line {
+  /*width: 369px;*/
+  margin: 10px -20px 0;
+  border-top: 2px solid grey;
+  /*box-shadow: 3px 3px #888888;*/
+  /*position: absolute;*/
+}
+
+a:link {
+  color: black;
+}
+
+/***********************************************************************/
+/*Potentially useful classes*/
+
+.container {
+  width: 375px;
+  min-height: 50px;
+  margin: 0px auto;
+  /*padding-left: 15px;*/
+  /*padding-right: 15px;*/
+}
+
+.space-evenly {
+  display: flex;
+  justify-content: space-between;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+/* 1-1Meetup Map*/
+#map {
+  height: 100%;
+}
+.map {
+  display: block;
+  position: relative;
+  height: 460px;
+}
+.fixed-bottom {
+  position: absolute;
+  bottom: 25px;
+  width: 329px;
+}
+.carousel-wrapper {
+  display: -webkit-box;
+  overflow: auto hidden;
+}
+.donor {
+  width: 175px;
+  height: 137px;
+  border-radius: 5px;
+  position: relative;
+}
+.donor:not(:last-child) {
+  margin-right: 10px;
+}
+.donor > img {
+  width: 100%;
+  border-radius: 5px;
+}
+.donor-info {
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 100%;
+  background-color: #f4a7ec;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+.donor-info > div {
+  display: flex;
+}
+.donor-info img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.donor-contact {
+  font-size: 9px;
+  text-align: center;
+  padding: 3px;
+  background-color: #dddedf;
+  border-radius: 4px;
+}
+.donor-time {
+  font-size: 10px;
+}
+
+/* Activity Feed */
+.activity {
+  margin: 20px auto;
+}
+h2 {
+  font-weight: 400 !important;
+  text-align: center;
+  text-transform: uppercase;
+}
+.feed {
+  font-size: 16px;
+  height: 598px;
+  overflow: hidden auto;
+}
+.feed > div:not(:first-child) {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffce6e;
+}
+.feed > div:not(:last-child) {
+  margin-bottom: 10px;
+}
+.feed > div:first-child {
+  margin: 15px 0;
+}
+.feed > div img {
+  width: 70px;
+  height: 70px;
+}
+.feed > div:not(:first-child) img {
+  margin-right: 10px;
+}
+.feed > div:first-child div {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid #333;
+}
