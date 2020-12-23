@@ -34,16 +34,20 @@ body {
 
 .mytabs #label1 {
   margin-left: 65px;
-  margin-right: 10px;
+  border: 1px solid orange;
+  border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 .mytabs label {
   padding: 10px 30px;
-  margin-left: 5px;
-  border: 2px black solid;
-
-  background: grey;
+  background-color: white;
   font-weight: bold;
+  border: 1px solid orange;
 }
+.mytabs #label2 {
+    border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  }
 .mytabs .tab {
   width: 100%;
   padding: 10px 0;
@@ -61,7 +65,7 @@ body {
   background: orange;
 }
 .scroll {
-  height: 439px;
+  height: 462px;
   overflow: hidden auto;
 }
 
@@ -73,8 +77,8 @@ body {
 
 #change {
   color: orange;
-  float: right;
-  font-size: 15px;
+  margin-left: 10px;
+  font-size: 12px;
 }
 
 #selection {
@@ -134,6 +138,7 @@ button {
 
 .head {
   padding: 0 10px;
+  display: flex;
 }
 
 .head .button {
@@ -183,38 +188,6 @@ button {
   margin-right: 5px;
 }
 
-.filter-block {
-  display: flex;
-}
-
-.filter-block div {
-  margin-right: 5px;
-  font-size: 9px;
-  text-align: center;
-  padding: 3px 10px;
-  border-radius: 4px;
-}
-
-.filter {
-  background-color: #dddedf;
-}
-
-.filter-pantry {
-  background-color: #b08bff;
-}
-
-.filter-meal-swipe {
-  background-color: #5fe37c;
-}
-
-.filter-pickup-only {
-  background-color: #ff7af2;
-}
-
-.filter-club-event {
-  background-color: #fcff73;
-}
-
 .line {
   /*width: 369px;*/
   margin: 10px -20px 0;
@@ -248,7 +221,107 @@ a:link {
   justify-content: center;
 }
 
-/* 1-1Meetup Map*/
+/* Meal Swipe */
+.meal-swipe .post {
+  height: 168px;
+  width: 320px;
+  padding-top: 0;
+}
+
+.meal-swipe img {
+  height: 125px;
+  width: 100%;
+  border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.meal-swipe .mealswipe-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: white;
+}
+.meal-swipe .meal-swipe-location {
+  font-size: 13px;
+}
+
+.meal-swipe .meal-swipe-time {
+  font-size: 10px;
+}
+.meal-swipe-available {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.meal-swipe .available {
+  font-size: 6px;
+  display: flex;
+  align-items: center;
+}
+.available span{
+  font-size: 0px;
+    border: 2px solid #0FC236;
+    border-radius: 50%;
+    line-height: 1px;
+    margin: 2px 5px;
+}
+.meal-swipe button {
+  font-size: 10px;
+  border-radius: 8px;
+  box-shadow: none;
+  height: 21px;
+}
+.meal-swipe .share-swipe {
+  color: white;
+  background-color: #355BE0;
+  border: none;
+  margin-right: 10px;
+}
+.meal-swipe .get-swipe {
+  color: black;
+  background-color: white;
+  border: 1px solid #355BE0;
+}
+.carousel-wrapper.meal-swipe .post {
+  height: 150px;
+  width: 200px;
+  position: relative;
+}
+.carousel-wrapper.meal-swipe .mealswipe-info {
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.carousel-wrapper.meal-swipe .meal-swipe-available {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.carousel-wrapper.meal-swipe .meal-swipe-time i {
+  font-size: 14px;
+  margin-right: 5px;
+}
+.carousel-wrapper.meal-swipe .available img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.carousel-wrapper.meal-swipe .available .img1 {
+  margin-right: -7px;
+  z-index: 3;
+}
+.carousel-wrapper.meal-swipe .available .img2 {
+  margin-right: -7px;
+  z-index: 2;
+}
+.carousel-wrapper.meal-swipe .available .img3 {
+  margin-right: 5px;
+  z-index: 1;
+}
+
+/* 1-1Meetup Map */
 #map {
   height: 100%;
 }
@@ -311,6 +384,201 @@ a:link {
   font-size: 10px;
 }
 
+/* Pantries */
+.pantries .post {
+  padding: 10px;
+  display: flex;
+  border: none;
+}
+
+.pantries .post > img {
+  height: 125px;
+    width: 125px;
+    border-radius: 4px;
+    border: 1px solid black;
+    margin-right: 14px;
+}
+.pantries .post .pantry-info {
+  width: 160px;
+}
+.pantries .post .pantry-info div:first-child {
+  margin-bottom: 5px;
+}
+.pantries .pantry-location {
+  display: flex;
+  align-items: center;
+    justify-content: space-between;
+}
+.pantries .pantry-location #heart {
+  padding: 0;
+}
+.pantries .pantry-time {
+  font-size: 12px;
+}
+.pantries .pantry-time i {
+  font-size: 14px;
+  margin-right: 5px;
+}
+.pantries .pantry-time .pantry-arrival {
+  font-size: 12px;
+}
+.pantries .items img {
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+}
+.pantries .inventory-btn {
+  color: white;
+  background-color: #FE9C04;
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  margin-top: 5px;
+  padding: 2px;
+}
+.carousel-wrapper.pantries .post {
+  height: 230px;
+  width: 200px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+}
+.carousel-wrapper.pantries .post > img {
+  width: 200px;
+  border: none;
+  margin-right: 0;
+}
+.carousel-wrapper.pantries .post .pantry-info {
+  width: 100%;
+  padding: 5px;
+  position: absolute;
+  background-color: white;
+  bottom: 0;
+}
+
+.head .name {
+  display: flex;
+  flex-direction: column;
+}
+.head .name .location-block {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+.head .name .location-block i {
+  margin-right: 5px;
+}
+.head .name .location {
+  font-size: 8px;
+}
+i.far.fa-bell {
+  margin: 10px 20px;
+  font-size: 28px;
+}
+
+/* See Inventory */
+#inventory-screen {
+  height: 667px;
+  width: 375px;
+  background-color: white;
+  margin-top: 5%;
+  border: 3px solid black;
+  padding: 0;
+}
+.inventory {
+  position: relative;
+}
+.main-img {
+  position: relative;
+}
+.main-img img {
+  width: 369px;
+}
+.main-img i {
+  padding: 4px 6px;
+    margin: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border-radius: 50%;
+    color: orange;
+}
+.inventory .inventory-location {
+  display: flex;
+  align-items: center;
+    justify-content: space-between;
+}
+.inventory .inventory-location #heart {
+  padding: 0;
+}
+.inventory .inventory-time {
+  font-size: 12px;
+}
+.inventory .inventory-time i {
+  font-size: 14px;
+  margin-right: 5px;
+}
+.inventory .inventory-btn {
+  color: white;
+  background-color: #FE9C04;
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  margin-top: 5px;
+}
+.inventory .inventory-section {
+  padding: 15px 15px 0;
+  border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: white;
+    z-index: 2;
+    position: absolute;
+    top: 200px;
+}
+.inventory .inventory-section > div {
+  margin-bottom: 15px;
+}
+.inventory .items {
+  overflow-y: auto;
+  height: 371px;
+}
+.inventory .items-row span {
+  position: relative;
+  display: inline-block;
+}
+.inventory .items-row span:first-child {
+  margin: 0 15px 15px 0;
+}
+.inventory .items-row img {
+  width: 160px;
+  border-radius: 8px;
+}
+.inventory .claim-btn {
+  margin: 10px 5px;
+    color: orange;
+    background-color: white;
+    border: 1px solid orange;
+    border-radius: 4px;
+    box-shadow: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.inventory .claim-day-btn {
+  font-size: 10px;
+  color: white;
+    background-color: orange;
+    border-radius: 4px;
+    border: none;
+    box-shadow: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 /* Activity Feed */
 .activity {
   margin: 20px auto;
@@ -348,4 +616,25 @@ h2 {
   border-radius: 50%;
   padding: 10px;
   border: 1px solid #333;
+}
+
+.bottom-sheet {
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.bottom-sheet i {
+  font-size: 16px;
+}
+
+.bottom-sheet .plus {
+  color: white;
+  background-color: blue;
+  border-radius: 50%;
 }

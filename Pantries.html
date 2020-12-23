@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>FoodFind</title>
+	<link rel="stylesheet" type="text/css" href="list-style.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6P2TU3mBROUqlPoI7iNcPUYtLup0g7QE&callback=initMap&libraries=&v=weekly"
+		defer></script>
+	<style type="text/css">
+		/* Always set the map height explicitly to define the size of the div
+		   * element that contains the map. */
+		#map {
+			height: 100%;
+		}
+
+		/* Optional: Makes the sample page fill the window. */
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+	<script>
+		// The following example creates complex markers to indicate beaches near
+		// Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
+		// to the base of the flagpole.
+		function initMap() {
+			const map = new google.maps.Map(document.getElementById("map"), {
+				zoom: 16,
+				center: { lat: 40.807026045398, lng: -73.96262200746176 },
+				fullscreenControl: false,
+				zoomControl: false,
+				streetViewControl: false
+			});
+			setMarkers(map);
+		}
+		// Data for the markers consisting of a name, a LatLng and a zIndex for the
+		// order in which these markers should display on top of each other.
+		const beaches = [
+			["Columbia University", 40.80763713398514, -73.96258982095615, 4],
+			["Columbia College", 40.80692250491377, -73.9616349546235, 3],
+			["Bernard College", 40.80914757465363, -73.96380217933357, 2],
+			["Miller Theater", 40.808179191244726, -73.96350177194803, 1],
+		];
+
+		function setMarkers(map) {
+			for (let i = 0; i < beaches.length; i++) {
+				const beach = beaches[i];
+				new google.maps.Marker({
+					position: { lat: beach[1], lng: beach[2] },
+					map,
+					title: beach[0],
+					zIndex: beach[3],
+				});
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<div id=screen class=container>
+		<!-- Part1: Headers -->
+		<div class="mytabs">
+			<!-- CODE HERE FOR LIST VIEW -->
+			<input type="radio" id="tablist" name="mytabs" checked="checked">
+			<label for="tablist" id="label1">List</label>
+			<div class="tab">
+				<span id="location" class><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+				<span>Columbia University</span>
+				<span id="change">CHANGE</span>
+				<!-- The Tabs -->
+				<div class="row">
+					<div class="column">
+						<a href="MealSwipe.html">
+							<figure>
+								<img src="pictures/MealSwipe.png">
+								<figcaption id="caption">Meal Swipes</figcaption>
+							</figure>
+						</a>
+					</div>
+					<div class="column">
+						<a href="ClubEvent.html">
+							<figure>
+								<img src="pictures/ClubEvent.png">
+								<figcaption id="caption">Club Events</figcaption>
+							</figure>
+						</a>
+					</div>
+					<div class="column">
+						<a href="1-1Meetup.html">
+							<figure>
+								<img src="pictures/Meetup.png">
+								<figcaption id="caption">1:1 Meetup</figcaption>
+							</figure>
+						</a>
+					</div>
+					<div class="column">
+						<a href="Pantries.html">
+							<figure id="selection">
+								<img src="pictures/Pantries.png">
+								<figcaption id="caption">Pantries</figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+				<div class="line"></div>
+				<div class="scroll pantries">
+					<div class="post">
+						<img src="pictures/pantry-1.png" />
+						<div class="pantry-info">							
+							<div>
+								<div class="pantry-location">
+                                    <div>Pantry 1, Furnald 8</div>
+                                    <div id="heart"><i class="far fa-heart" aria-hidden="true"></i></div>
+								</div>
+                                <div class="pantry-time">
+                                    <i class="fas fa-walking" aria-hidden="true"></i>5 min
+                                </div>
+                                <div class="pantry-arrival">
+                                    New Arrivals
+                                </div>
+                                <div class="items">
+                                    <img src="pictures/lays.png" />
+                                    <img src="pictures/cookies.png" />
+                                    <img src="pictures/bananas.png" />
+                                </div>
+							</div>
+							<div>
+								<a class="inventory-btn" href="See-Inventory.html">See Inventory</a>
+							</div>
+						</div>
+					</div>
+					<div class="post">
+						<img src="pictures/pantry-2.png" />
+						<div class="pantry-info">							
+							<div>
+								<div class="pantry-location">
+                                    <div>Pantry 5, Schapiro 6</div>
+                                    <div id="heart"><i class="far fa-heart" aria-hidden="true"></i></div>
+								</div>
+                                <div class="pantry-time">
+                                    <i class="fas fa-walking" aria-hidden="true"></i>5 min
+                                </div>
+                                <div class="pantry-arrival">
+                                    New Arrivals
+                                </div>
+                                <div class="items">
+                                    <img src="pictures/lays.png" />
+                                    <img src="pictures/cookies.png" />
+                                    <img src="pictures/bananas.png" />
+                                </div>
+							</div>
+							<div>
+								<a class="inventory-btn" href="See-Inventory.html">See Inventory</a>
+							</div>
+						</div>
+					</div>
+					<div class="post">
+						<img src="pictures/pantry-3.png" />
+						<div class="pantry-info">							
+							<div>
+								<div class="pantry-location">
+                                    <div>Pantry 3, Hartley 2</div>
+                                    <div id="heart"><i class="far fa-heart" aria-hidden="true"></i></div>
+								</div>
+                                <div class="pantry-time">
+                                    <i class="fas fa-walking" aria-hidden="true"></i>5 min
+                                </div>
+                                <div class="pantry-arrival">
+                                    New Arrivals
+                                </div>
+                                <div class="items">
+                                    <img src="pictures/lays.png" />
+                                    <img src="pictures/cookies.png" />
+                                    <img src="pictures/bananas.png" />
+                                </div>
+							</div>
+							<div>
+								<a class="inventory-btn" href="See-Inventory.html">See Inventory</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- CODE HERE FOR MAP VIEW -->
+			<input type="radio" id="tabmap" name="mytabs">
+			<label for="tabmap" id="label2">Map</label>
+			<div class="tab">
+				<span id="location" class><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+				<span>Columbia University</span>
+				<span id="change">CHANGE</span>
+				<!-- The Tabs -->
+				<div class="row">
+					<div class="column">
+						<a href="MealSwipe.html">
+							<figure>
+								<img src="pictures/MealSwipe.png">
+								<figcaption id="caption">Meal Swipes</figcaption>
+							</figure>
+						</a>
+					</div>
+					<div class="column">
+						<a href="ClubEvent.html">
+							<figure>
+								<img src="pictures/ClubEvent.png">
+								<figcaption id="caption">Club Events</figcaption>
+							</figure>
+						</a>
+					</div>
+					<div class="column">
+						<a href="1-1Meetup.html">
+							<figure>
+								<img src="pictures/Meetup.png">
+								<figcaption id="caption">1:1 Meetup</figcaption>
+							</figure>
+						</a>
+					</div>
+					<div class="column">
+						<a href="Pantries.html">
+							<figure id="selection">
+								<img src="pictures/Pantries.png">
+								<figcaption id="caption">Pantries</figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+				<div class="line"></div>
+
+				<!-- CODE FOR MAP STARTS HERE -->
+				<div class="map">
+					<div id="map" style="width:100%;height:460px;">
+
+					</div>
+					<div class="fixed-bottom">
+						<div class="carousel-wrapper pantries">
+                            <div class="post">
+                                <img src="pictures/pantry-1.png" />
+                                <div class="pantry-info">							
+                                    <div>
+                                        <div class="pantry-location">
+                                            <div>Pantry 1, Furnald 8</div>
+                                            <div id="heart"><i class="far fa-heart" aria-hidden="true"></i></div>
+                                        </div>
+                                        <div class="pantry-time">
+                                            <i class="fas fa-walking" aria-hidden="true"></i>5 min
+                                        </div>
+                                        <div class="pantry-arrival">
+                                            New Arrivals
+                                        </div>
+                                        <div class="items">
+                                            <img src="pictures/lays.png" />
+                                            <img src="pictures/cookies.png" />
+                                            <img src="pictures/bananas.png" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="inventory-btn">See Inventory</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post">
+                                <img src="pictures/pantry-2.png" />
+                                <div class="pantry-info">							
+                                    <div>
+                                        <div class="pantry-location">
+                                            <div>Pantry 5, Schapiro 6</div>
+                                            <div id="heart"><i class="far fa-heart" aria-hidden="true"></i></div>
+                                        </div>
+                                        <div class="pantry-time">
+                                            <i class="fas fa-walking" aria-hidden="true"></i>5 min
+                                        </div>
+                                        <div class="pantry-arrival">
+                                            New Arrivals
+                                        </div>
+                                        <div class="items">
+                                            <img src="pictures/lays.png" />
+                                            <img src="pictures/cookies.png" />
+                                            <img src="pictures/bananas.png" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="inventory-btn">See Inventory</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post">
+                                <img src="pictures/pantry-3.png" />
+                                <div class="pantry-info">							
+                                    <div>
+                                        <div class="pantry-location">
+                                            <div>Pantry 3, Hartley 2</div>
+                                            <div id="heart"><i class="far fa-heart" aria-hidden="true"></i></div>
+                                        </div>
+                                        <div class="pantry-time">
+                                            <i class="fas fa-walking" aria-hidden="true"></i>5 min
+                                        </div>
+                                        <div class="pantry-arrival">
+                                            New Arrivals
+                                        </div>
+                                        <div class="items">
+                                            <img src="pictures/lays.png" />
+                                            <img src="pictures/cookies.png" />
+                                            <img src="pictures/bananas.png" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="inventory-btn">See Inventory</button>
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+	</div>
+	</div>
+</body>
+
+</html>
